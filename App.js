@@ -1,89 +1,290 @@
 import React from 'react';
-import { View, StyleSheet, Image, TextInput, Text, Button, Dimensions } from 'react-native';
-
-const { height } = Dimensions.get('window');
+import { View, Image, Text, ScrollView, StyleSheet, SafeAreaView } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons'; // Biblioteca para ícones
 
 export default function App() {
-
-  const estilo = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100%',
-      backgroundColor: '#fff',
-      padding: 20,
-    },
-
-    textoCentralizado: {
-      fontSize: 16,
-      fontFamily: 'Roboto',
-      color: '#333',
-      marginBottom: 13,
-      textAlign: 'center',
-      fontWeight: 'bold'
-    },
-
-    img: {
-      height: 300,
-      width: 280,
-      borderWidth: 1,
-      borderColor: 'black',
-      borderRadius: 10,
-      marginBottom: 8
-    },
-
-    textoEsquerda: {
-      fontSize: 16,
-      fontFamily: 'Roboto',
-      color: '#333',
-      marginBottom: 5,
-      alignSelf: 'flex-start',
-    },
-
-    input: {
-      width: '100%',
-      height: 45,
-      fontSize: 16,
-      borderWidth: 1,
-      borderColor: '#000',
-      borderRadius: 5,
-      paddingHorizontal: 10,
-      marginBottom: 15,
-    },
-
-    segundoContainer: {
-      width: '80%',
-    },
-
-    botao: {
-      marginTop: 10,
-      marginBottom: 15,
-    }
-  });
-
   return (
-    <View style={estilo.container}>
+    <SafeAreaView style={estilo.safeArea}>
 
-      <Text style={estilo.textoCentralizado}>Aplicativo de apresentação pessoal</Text>
+      <ScrollView contentContainerStyle={estilo.scrollContent}>
 
-      <Image source={require("./assets/megume.jpg")} style={estilo.img} />
+        <View style={estilo.principal}>
+
+          <View>
+            <Text style={estilo.negrito}>Popular Places</Text>
+          </View>
+
+          <FontAwesome name="chevron-right" size={20} color="black" style={estilo.arrowIcon} />
+
+          <View>
+            <Text>All Popular Places</Text>
+          </View>
+
+          <View style={estilo.card}>
+
+            <View style={estilo.imageContainer}>
+              <Image source={require("./assets/img1.jpg")} style={estilo.img} />
+            </View>
+
+            <Text style={estilo.center}>Niladri Reservoir</Text>
+
+            <View style={estilo.row}>
+              <FontAwesome name="map-marker" size={24} color="red" />
+              <Text style={estilo.text}>Lorem ipsum dolor</Text>
+            </View>
+
+            <View style={estilo.row}>
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <Text style={estilo.text}>4.5</Text>
+            </View>
+
+            <Text>$459/Person</Text>
+          </View>
 
 
-      <Text style={estilo.textoCentralizado}>Megumi Fushiguro</Text>
+          <View style={estilo.card}>
+
+            <View style={estilo.imageContainer}>
+              <Image source={require("./assets/img2.jpg")} style={estilo.img} />
+            </View>
+
+            <Text style={estilo.center}>Casa Las Tirtugas</Text>
+
+            <View style={estilo.row}>
+              <FontAwesome name="map-marker" size={24} color="red" />
+              <Text style={estilo.text}>Lorem ipsum dolor</Text>
+            </View>
+
+            <View style={estilo.row}>
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <Text style={estilo.text}>4.5</Text>
+            </View>
+
+            <Text>$894/Person</Text>
+
+          </View>
 
 
-      <View style={estilo.segundoContainer}>
-        <Text style={estilo.textoEsquerda}>Informe o seu nome...</Text>
-        <TextInput style={estilo.input} />
+          <View style={estilo.card}>
 
-        <Text style={estilo.textoEsquerda}>Descrição...</Text>
-        <TextInput style={estilo.input} />
+            <View style={estilo.imageContainer}>
+              <Image source={require("./assets/img3.jpg")} style={estilo.img} />
+            </View>
 
-        <View style={estilo.botao}>
-          <Button title="Enviar dados" color="#34E675" />
+            <Text style={estilo.center}>Aonang Villa Resort</Text>
+
+            <View style={estilo.row}>
+              <FontAwesome name="map-marker" size={24} color="red" />
+              <Text style={estilo.text}>Lorem ipsum dolor</Text>
+            </View>
+
+            <View style={estilo.row}>
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <Text style={estilo.text}>4.5</Text>
+
+            </View>
+            <Text>$761/Person</Text>
+          </View>
+
+
+          <View style={estilo.card}>
+
+            <View style={estilo.imageContainer}>
+              <Image source={require("./assets/img4.jpg")} style={estilo.img} />
+            </View>
+
+            <Text style={estilo.center}>Rangauti Resort</Text>
+
+            <View style={estilo.row}>
+              <FontAwesome name="map-marker" size={24} color="red" />
+              <Text style={estilo.text}>Lorem ipsum dolor</Text>
+            </View>
+
+            <View style={estilo.row}>
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <Text style={estilo.text}>4.5</Text>
+            </View>
+
+            <Text>$857/Person</Text>
+          </View>
+
+          <View style={estilo.card}>
+
+            <View style={estilo.imageContainer}>
+              <Image source={require("./assets/img5.jpg")} style={estilo.img} />
+            </View>
+
+            <Text style={estilo.center}>Azure Bay</Text>
+
+            <View style={estilo.row}>
+              <FontAwesome name="map-marker" size={24} color="red" />
+              <Text style={estilo.text}>Lorem ipsum dolor</Text>
+            </View>
+
+            <View style={estilo.row}>
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <Text style={estilo.text}>4.5</Text>
+            </View>
+
+            <Text>$977/Person</Text>
+          </View>
+
+          <View style={estilo.card}>
+
+            <View style={estilo.imageContainer}>
+              <Image source={require("./assets/img6.jpg")} style={estilo.img} />
+            </View>
+
+            <Text style={estilo.center}>Whispering Pines</Text>
+
+            <View style={estilo.row}>
+              <FontAwesome name="map-marker" size={24} color="red" />
+              <Text style={estilo.text}>Lorem ipsum dolor</Text>
+            </View>
+
+            <View style={estilo.row}>
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <Text style={estilo.text}>4.5</Text>
+            </View>
+
+            <Text>$889/Person</Text>
+          </View>
+
+          <View style={estilo.card}>
+
+            <View style={estilo.imageContainer}>
+              <Image source={require("./assets/img7.jpg")} style={estilo.img} />
+            </View>
+
+            <Text style={estilo.center}>Crystal Shores</Text>
+
+            <View style={estilo.row}>
+              <FontAwesome name="map-marker" size={24} color="red" />
+              <Text style={estilo.text}>Lorem ipsum dolor</Text>
+            </View>
+
+            <View style={estilo.row}>
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <Text style={estilo.text}>4.5</Text>
+            </View>
+
+            <Text>$928/Person</Text>
+          </View>
+
+          <View style={estilo.card}>
+
+            <View style={estilo.imageContainer}>
+              <Image source={require("./assets/img8.jpg")} style={estilo.img} />
+            </View>
+
+            <Text style={estilo.center}>Sunset Lagoon</Text>
+
+            <View style={estilo.row}>
+              <FontAwesome name="map-marker" size={24} color="red" />
+              <Text style={estilo.text}>Lorem ipsum dolor</Text>
+            </View>
+
+            <View style={estilo.row}>
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <FontAwesome name="star" size={24} color="gold" style={estilo.starMargin} />
+              <Text style={estilo.text}>4.5</Text>
+            </View>
+
+            <Text>$997/Person</Text>
+          </View>
+
         </View>
-      </View>
-    </View>
+
+      </ScrollView>
+
+    </SafeAreaView>
   );
 }
+
+const estilo = StyleSheet.create({
+
+  safeArea: {
+    flex: 1,
+    paddingTop: 60, 
+  },
+
+  scrollContent: {
+    paddingBottom: 30, 
+  },
+
+  card: {
+    marginBottom: 20,
+    padding: 10,
+    backgroundColor: '#f9f9f9',
+    borderRadius: 10,
+    height: 280,
+    shadowColor: '#000', 
+    shadowOffset: { width: 0, height: 4 }, 
+    shadowOpacity: 0.2, 
+    shadowRadius: 5, 
+    elevation: 5, 
+  },
+
+  imageContainer: {
+    borderRadius: 10,
+    overflow: 'hidden',
+    marginBottom: 8,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  img: {
+    height: 130,
+    width: 130,
+    borderWidth: 1,
+    borderColor: 'black',
+    borderRadius: 10,
+  },
+
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5, 
+  },
+
+  text: {
+    marginLeft: 5, 
+  },
+
+  principal: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: "center",
+    gap: 20
+  },
+
+  starMargin: {
+    marginRight: 5,  
+  },
+
+  negrito: {
+    fontWeight: 'bold'
+  },
+
+  center: {
+    textAlign: 'center',
+    fontWeight: 'bold'
+  }
+});
